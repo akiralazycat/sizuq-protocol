@@ -1,5 +1,6 @@
 {
   "@context": {
+    "@protected": true,
     "SizuqResourceService": "https://sizuq.org/ns/v0.1#SizuqResourceService"
   }
 }
