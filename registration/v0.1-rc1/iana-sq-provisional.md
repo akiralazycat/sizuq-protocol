@@ -8,13 +8,15 @@ Requested status: **Provisional**
 
 As of 2026-08-23, the official IANA URI Schemes registry does not contain an `sq` entry. This MUST be checked again immediately before submission.
 
-The release manifest currently marks the immutable release tag as blocking. Do not submit until `protocol-v0.1-rc1` (or the final chosen immutable release reference) exists and all implementation migration gates are closed.
+The release manifest currently marks the immutable release tag and final verification checks as blocking. Do not submit until the final release reference exists and all blocking checks are closed.
 
-## Registration fields
+## RFC 7595 registration template
 
-### URI scheme name
+### Scheme name
 
 `sq`
+
+Scheme-name rationale: `sq` is a short contraction associated specifically with Sizuq Protocol. It is not defined as a generic term for arbitrary identity, storage, social, or resource systems. The defining specification constrains its semantics to resources rooted in `did:sizuq` identities.
 
 ### Status
 
@@ -24,10 +26,14 @@ Provisional
 
 Sizuq Protocol clients, DID-aware social/content applications, resolvers, gateways, QR/NFC links, and interoperable resource references use `sq:` to identify resources rooted in `did:sizuq` identities without binding the canonical resource identifier to a particular HTTPS host.
 
+The intended use is public and interoperable and is not limited to a private environment within one organization. Public reference resolution, resource dereferencing, vectors, and a separately written resolver are available as interoperability evidence.
+
 ### Contact
 
-Sizuq Protocol Editors  
-`contact@sizuq.com`
+**BLOCKING — insert an identifiable individual registrant name before submission.**  
+Email intended for correspondence: `contact@sizuq.com`
+
+RFC 7595 provisional guidance requires contact information identifying the person supplying the registration. A role-only label is therefore not treated as sufficient for the final submission draft.
 
 ### Change controller
 
@@ -36,10 +42,12 @@ Sizuq Protocol Editors
 
 ### References
 
-- Versioned source: `https://github.com/akiralazycat/sizuq-protocol/tree/main/specs/sq-uri/v0.1`
-- Durable rendered specification: `https://sizuq.org/spec/sq-uri`
-- Registration release bundle: `https://github.com/akiralazycat/sizuq-protocol/tree/main/registration/v0.1-rc1`
-- Immutable release tag/commit: **BLOCKING — insert after freeze**
+- Sizuq Protocol Editors, “`sq:` URI Scheme Specification v0.1”, durable publication: `https://sizuq.org/spec/sq-uri`.
+- Sizuq Protocol Editors, versioned source: `https://github.com/akiralazycat/sizuq-protocol/tree/main/specs/sq-uri/v0.1`.
+- Sizuq Protocol Editors, registration release bundle: `https://github.com/akiralazycat/sizuq-protocol/tree/main/registration/v0.1-rc1`.
+- T. Berners-Lee, R. Fielding, L. Masinter, “Uniform Resource Identifier (URI): Generic Syntax”, RFC 3986.
+- D. Thaler et al., “Guidelines and Registration Procedures for URI Schemes”, RFC 7595.
+- Immutable Sizuq Protocol v0.1-rc1 release: **BLOCKING — insert tag/commit URL after freeze**.
 
 ## Scheme summary
 
@@ -74,11 +82,11 @@ Scheme comparison follows RFC 3986 scheme case-insensitivity; emitters serialize
 ## Final submission checklist
 
 - [ ] Recheck the live IANA registry for exact `sq` availability.
+- [ ] Insert an identifiable individual registrant in `Contact` and confirm the correspondence address is monitored.
 - [ ] Freeze and cite an immutable repository commit/tag.
-- [ ] Migrate the core implementation and independent resolver into this repository.
-- [ ] Run normative DID and `sq:` vectors against both implementations.
+- [x] Promote the core implementation and separately written resolver into this repository.
+- [ ] Run normative DID, lifecycle, and `sq:` vectors against the final release implementation(s).
 - [ ] Confirm the durable `sizuq.org` spec/context/namespace URLs return the release semantics.
-- [ ] Confirm the public contact address is monitored.
 - [ ] Compare this text against the current RFC 7595/IANA submission instructions on submission day.
 - [ ] Submit as **Provisional**, not Permanent.
 - [ ] After acceptance, update repository status factually with the IANA registry reference.
