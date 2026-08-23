@@ -30,10 +30,33 @@
     "digestEncoding": "multibase base58btc",
     "signatureSuite": "Ed25519 Multikey"
   },
+  "implementationEvidence": {
+    "core": "packages/core/src/index.ts",
+    "independentResolver": "implementations/independent-resolver/sizuq-independent-resolver-v0.1.mjs",
+    "independentRunner": "implementations/independent-resolver/run-sizuq-conformance-v0.1.mjs",
+    "referenceNodeSchema": "reference-node/schema.sql",
+    "vectors": [
+      "conformance/did-v0.1.json",
+      "conformance/sq-v0.1.json",
+      "conformance/lifecycle-v0.1.json",
+      "conformance/live-evidence-v0.1.json"
+    ],
+    "historicalIndependentReport": "conformance/independent-resolver-report-v0.1.json",
+    "sourceMigrationComplete": true,
+    "releaseCandidateRetestRequired": true
+  },
   "freeze": {
     "tag": "protocol-v0.1-rc1",
     "tagCreated": false,
     "blockingUntilTag": true,
+    "remainingBlockingChecks": [
+      "GitHub Actions typecheck and repository-local conformance tests pass on the final release commit",
+      "independent resolver is rerun against the final v0.1-rc1 artifacts",
+      "durable sizuq.org specification/context/namespace URLs are verified against the frozen semantics",
+      "the live IANA URI Schemes registry is rechecked for sq immediately before submission",
+      "the live W3C DID Methods collection is rechecked for sizuq immediately before submission",
+      "an immutable protocol-v0.1-rc1 tag is created at the reviewed release commit"
+    ],
     "rule": "Before external submission, freeze this release at an immutable commit/tag and re-check the manifest blob identities. Interoperable behavior changes require a later release candidate."
   }
 }
