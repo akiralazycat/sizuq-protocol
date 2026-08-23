@@ -1,6 +1,6 @@
 # Protocol v0.1 Registration Readiness
 
-Status: **Release Candidate (`v0.1-rc1`)**  
+Status: **Release Candidate (`v0.1-rc1`) / verification pending**  
 Change controller: Sizuq Protocol Editors  
 Normative language: BCP 14
 
@@ -8,13 +8,15 @@ This directory freezes the registration-facing contract for Sizuq Protocol v0.1 
 
 ## Registration order
 
-1. freeze `v0.1-rc1` semantics and durable references;
-2. close DID Core security/privacy requirements;
-3. publish the `SizuqResourceService` namespace and JSON-LD context;
-4. request IANA Provisional registration for `sq:`;
-5. submit `did:sizuq` to the W3C DID Methods collection.
+1. run the final repository-local conformance suite;
+2. rerun the separately written resolver against release-candidate evidence;
+3. verify durable `sizuq.org` specification/context/namespace output;
+4. freeze an immutable `protocol-v0.1-rc1` tag;
+5. recheck live registries and submission policies;
+6. request IANA Provisional registration for `sq:`;
+7. submit `did:sizuq` to the W3C DID Methods collection.
 
-No registry application should be sent while an item marked **BLOCKING** in this bundle remains open.
+No registry application should be sent while an item marked **BLOCKING** in the manifest remains open.
 
 ## Frozen v0.1 contract
 
@@ -34,23 +36,34 @@ The following behavior is immutable for this release-candidate line:
 - directory responses are non-authoritative until independently verified;
 - `sq:` roots equal the `did:sizuq` v0.1 method-specific identifier;
 - an `sq:` path is dereferenced through `SizuqResourceService`;
-- HTTP dereferencing or redirects do not replace the canonical `sq:` identifier.
+- HTTP dereferencing or redirects do not replace the canonical `sq:` identifier;
+- the v0.1 JSON-LD context is versioned, not date-stamped, and protected with `@protected`.
 
 A backward-incompatible change requires a new protocol version.
 
 ## Release files
 
-- `spec-manifest.json` — exact source paths/blob identities and algorithm choices;
+- `spec-manifest.json` — source paths/blob identities, algorithm choices, evidence, and remaining blocking checks;
+- `registry-preflight-2026-08-23.md` — dated external-registry snapshot, never a substitute for submission-day verification;
+- `iana-sq-provisional.md` — IANA Provisional registration draft;
+- `w3c-did-method-submission.md` — W3C DID Methods submission draft/checklist;
 - `did-sizuq-security-privacy.md` — normative security/privacy supplement;
 - `did-core-security-privacy-matrix.md` — DID Core closure matrix;
 - `sizuq-resource-service.md` — normative service profile;
-- `../../contexts/sizuq/v0.1.jsonld` — versioned JSON-LD context;
+- `../../contexts/sizuq/v0.1.jsonld` — versioned protected JSON-LD context;
 - `../../namespace/v0.1/` — stable namespace definition.
 
 Primary specifications:
 
 - `../../specs/did-sizuq/v0.1/`
 - `../../specs/sq-uri/v0.1/`
+
+Implementation evidence:
+
+- `../../packages/core/`;
+- `../../implementations/independent-resolver/`;
+- `../../conformance/`;
+- `../../reference-node/`.
 
 ## Freeze policy
 
@@ -65,6 +78,7 @@ Before submission:
 - confirm `sq` remains unassigned in the IANA URI Schemes registry;
 - request **Provisional** status;
 - provide scheme name, status, applications/protocols, contact, change controller, and reference information consistent with RFC 7595;
+- demonstrate that intended use is not limited to a private environment inside one organization;
 - cite the immutable repository release and durable public specification;
 - ensure syntax, semantics, security, privacy, and interoperability sections remain mutually consistent.
 
@@ -75,8 +89,10 @@ Before submission:
 - all rows in the DID Core matrix are `CLOSED` or explicitly justified `N/A / CLOSED`;
 - the method specification defines create, resolution, update, recovery, and deactivation behavior;
 - public specification, implementation, vectors, and evidence agree on v0.1 bytes and state semantics;
-- `SizuqResourceService` has a resolvable namespace/context;
-- the registry entry uses `sizuq`, a durable spec URL, and maintained contact information.
+- `SizuqResourceService` has a persistent human-readable namespace and protected, versioned JSON-LD context;
+- the context actually served at the durable URL matches the repository artifact;
+- the registry entry uses `sizuq`, a durable defining-specification URL, and maintained contact information;
+- current DID Extensions legal/security/privacy and JSON-LD registration policies are rechecked.
 
 ## Status language
 
