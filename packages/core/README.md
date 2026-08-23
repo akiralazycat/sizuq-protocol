@@ -1,12 +1,12 @@
 # `@sizuq/protocol` Core
 
-This directory is the canonical destination for the dependency-free Sizuq Protocol v0.1 reference core.
+This directory contains the dependency-free Sizuq Protocol v0.1 reference core promoted from the original `akiralazycat/sizuq/protocol/packages/core` implementation.
 
-## Migration status
+## Status
 
-**BLOCKING for release freeze:** implementation source is still canonical in `akiralazycat/sizuq/protocol/packages/core` and must be copied here without semantic changes before `protocol-v0.1-rc1` is tagged.
+**Core source migration complete.**
 
-The existing implementation provides:
+The package contains:
 
 - RFC 8785 JCS canonicalization;
 - SHA-256 helpers;
@@ -17,7 +17,10 @@ The existing implementation provides:
 - rotation/recovery/deactivation writer helpers;
 - `sq:` parsing and dereferencing helpers;
 - directory transport helpers;
-- normative/interoperability vector tests.
+- fixed v0.1 and public interoperability fixtures;
+- interoperability tests.
+
+The next release-freeze gate is to run the migrated implementation from this repository against the frozen vectors and compare its outputs with the separately written resolver.
 
 ## Rule
 
