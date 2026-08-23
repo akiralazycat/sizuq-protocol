@@ -1,0 +1,16 @@
+{
+  "name": "sizuq-protocol",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test packages/core/src/*.test.ts",
+    "test:independent:live": "node implementations/independent-resolver/run-sizuq-conformance-v0.1.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "tsx": "^4.23.12",
+    "typescript": "^5"
+  }
+}
