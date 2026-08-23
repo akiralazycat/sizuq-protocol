@@ -1,0 +1,59 @@
+{
+  "suite": "sizuq-protocol-sq-v0.1",
+  "status": "informative",
+  "specification": "https://sizuq.org/spec/sq-uri",
+  "root": "z75o3YCSEJnivnVp76pexncihFSzBTaRJ7jdCtaXURwtM",
+  "cases": [
+    {
+      "id": "SQ-01",
+      "input": "sq:z75o3YCSEJnivnVp76pexncihFSzBTaRJ7jdCtaXURwtM",
+      "valid": true,
+      "root": "z75o3YCSEJnivnVp76pexncihFSzBTaRJ7jdCtaXURwtM",
+      "path": null,
+      "note": "Identity-root URI with no resource path."
+    },
+    {
+      "id": "SQ-02",
+      "input": "sq:z75o3YCSEJnivnVp76pexncihFSzBTaRJ7jdCtaXURwtM/profile",
+      "valid": true,
+      "root": "z75o3YCSEJnivnVp76pexncihFSzBTaRJ7jdCtaXURwtM",
+      "path": "profile"
+    },
+    {
+      "id": "SQ-03",
+      "input": "SQ:z75o3YCSEJnivnVp76pexncihFSzBTaRJ7jdCtaXURwtM/post/123",
+      "valid": true,
+      "serializedScheme": "sq",
+      "root": "z75o3YCSEJnivnVp76pexncihFSzBTaRJ7jdCtaXURwtM",
+      "path": "post/123",
+      "note": "Scheme comparison is case-insensitive; emitters should serialize lowercase sq."
+    },
+    {
+      "id": "SQ-04",
+      "input": "sq:z0/post/123",
+      "valid": false,
+      "reason": "invalidRoot"
+    },
+    {
+      "id": "SQ-05",
+      "input": "sq:",
+      "valid": false,
+      "reason": "missingRoot"
+    },
+    {
+      "id": "SQ-06",
+      "input": "sq:z75o3YCSEJnivnVp76pexncihFSzBTaRJ7jdCtaXURwtM/post/%ZZ",
+      "valid": false,
+      "reason": "invalidPercentEncoding"
+    },
+    {
+      "id": "SQ-07",
+      "input": "sq:z75o3YCSEJnivnVp76pexncihFSzBTaRJ7jdCtaXURwtM/post/123#reply-2",
+      "valid": true,
+      "root": "z75o3YCSEJnivnVp76pexncihFSzBTaRJ7jdCtaXURwtM",
+      "path": "post/123",
+      "fragment": "reply-2",
+      "primaryResource": "sq:z75o3YCSEJnivnVp76pexncihFSzBTaRJ7jdCtaXURwtM/post/123"
+    }
+  ]
+}
