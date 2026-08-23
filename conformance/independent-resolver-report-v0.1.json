@@ -1,0 +1,35 @@
+{
+  "reportVersion": "sizuq-conformance-report/0.1",
+  "protocolVersion": "0.1",
+  "implementation": {
+    "name": "sizuq-independent-resolver",
+    "version": "0.1.0",
+    "source": "https://sizuq.org/implementations/sizuq-independent-resolver-v0.1.mjs",
+    "runner": "https://sizuq.org/implementations/run-sizuq-conformance-v0.1.mjs",
+    "runtimeDependencies": [],
+    "importsSizuqCore": false,
+    "implementationBoundary": "A separately written resolver in one public ES module. It shares protocol specifications and vectors, but no runtime code, with @sizuq/protocol."
+  },
+  "profiles": ["did:sizuq-resolver"],
+  "results": {
+    "normativeCreationVector": "pass",
+    "publicImmutableVector": "pass",
+    "publicLifecyclePilot": {
+      "status": "pass",
+      "transitions": ["create", "update", "recover", "deactivate"],
+      "finalSequence": 3,
+      "finalState": "deactivated"
+    },
+    "negativeCases": {
+      "mutatedSignatureRejected": "pass",
+      "postDeactivationOperationRejected": "pass"
+    },
+    "testsPassed": 7,
+    "testsFailed": 0
+  },
+  "generatedAt": "2026-08-23T08:56:00Z",
+  "limitations": [
+    "This is an implementation-independent code path, not an implementation maintained by an unaffiliated third party.",
+    "This report is interoperability evidence, not certification or a security audit."
+  ]
+}
