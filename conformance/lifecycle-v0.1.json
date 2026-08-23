@@ -1,0 +1,111 @@
+{
+  "suite": "sizuq-protocol-public-lifecycle-pilot-v0.1",
+  "status": "informative",
+  "protocolVersion": "0.1",
+  "purpose": "Public persistent create, rotation, recovery, and deactivation evidence.",
+  "privateKeysRetained": false,
+  "did": "did:sizuq:zGjN5sTV97W2YUKUmpmH7Ap4qbHBZKRW3ceub3zaKHz52",
+  "root": "zGjN5sTV97W2YUKUmpmH7Ap4qbHBZKRW3ceub3zaKHz52",
+  "operations": "https://sizuq.org/.well-known/sizuq/did/zGjN5sTV97W2YUKUmpmH7Ap4qbHBZKRW3ceub3zaKHz52/operations",
+  "digests": [
+    "zE7dJcmoMVYk6uGhrcXgNyuEDcP8bJHkzjj1WmougqR2n",
+    "zGNz7HYw3ioFkAnJitBvbMRN3ZV1r7HGQrTmjDsvYCSzd",
+    "zAvoSZqcJFfgxvTk4giHMYYQJ4LobvaAiY318E34dGi4o",
+    "zD41ssYK3viBP62VzzT2XZdibVYtA8d6ztQ9SkDgUrGRw"
+  ],
+  "expectedFinalState": {
+    "sequence": 3,
+    "deactivated": true,
+    "didDocument": null,
+    "versionId": "zD41ssYK3viBP62VzzT2XZdibVYtA8d6ztQ9SkDgUrGRw"
+  },
+  "history": [
+    {
+      "did": "did:sizuq:zGjN5sTV97W2YUKUmpmH7Ap4qbHBZKRW3ceub3zaKHz52",
+      "sequence": 0,
+      "genesis": {
+        "type": "create",
+        "version": 1,
+        "rotationKeys": ["z6MkgLA1HGxHwPP6SbbKQV1GAxYVUWpWs9MTHmoDhHpnJ6ji"],
+        "recoveryKeys": ["z6MkhsyZ5xA9jqH8ibSsn2Ytvut8SdWjCoPfgiHVpaYJsWV3"],
+        "verificationMethods": [{
+          "id": "#auth-1",
+          "type": "Multikey",
+          "publicKeyMultibase": "z6MkgLA1HGxHwPP6SbbKQV1GAxYVUWpWs9MTHmoDhHpnJ6ji",
+          "purposes": ["authentication", "assertionMethod"]
+        }],
+        "services": [{
+          "id": "#resources",
+          "type": "SizuqResourceService",
+          "serviceEndpoint": "https://sizuq.org/api/reference/resource"
+        }]
+      },
+      "proof": {
+        "key": "z6MkgLA1HGxHwPP6SbbKQV1GAxYVUWpWs9MTHmoDhHpnJ6ji",
+        "signatureMultibase": "zBCS4BBSx2ocexqE3aDs92dXivFiVN8Z3FdZN9zCyD1hP4iJ34r4uiP7j2Qq4prvV3EDemSuhnRuEki6zD87jtmT"
+      }
+    },
+    {
+      "did": "did:sizuq:zGjN5sTV97W2YUKUmpmH7Ap4qbHBZKRW3ceub3zaKHz52",
+      "sequence": 1,
+      "previous": "zE7dJcmoMVYk6uGhrcXgNyuEDcP8bJHkzjj1WmougqR2n",
+      "timestamp": "2026-08-23T08:52:00Z",
+      "operation": {
+        "type": "update",
+        "rotationKeys": ["z6MkhVm4KA9iF1QYGnxkyDY6d2P4qjMFNePx4ofnVTkXHuAE"],
+        "verificationMethods": [{
+          "id": "#auth-2",
+          "type": "Multikey",
+          "publicKeyMultibase": "z6MkhVm4KA9iF1QYGnxkyDY6d2P4qjMFNePx4ofnVTkXHuAE",
+          "purposes": ["authentication", "assertionMethod"]
+        }],
+        "services": [{
+          "id": "#resources",
+          "type": "SizuqResourceService",
+          "serviceEndpoint": "https://sizuq.org/api/reference/resource"
+        }]
+      },
+      "proof": {
+        "key": "z6MkgLA1HGxHwPP6SbbKQV1GAxYVUWpWs9MTHmoDhHpnJ6ji",
+        "signatureMultibase": "z579ZQ3nvvm7pUBjJe4JQAk8dCmNJAzp8MPMmipe16CWvGQcBELtorNNT7e5KfXCDyvFKcHm8MSpiX6ZXPXP8qhAq"
+      }
+    },
+    {
+      "did": "did:sizuq:zGjN5sTV97W2YUKUmpmH7Ap4qbHBZKRW3ceub3zaKHz52",
+      "sequence": 2,
+      "previous": "zGNz7HYw3ioFkAnJitBvbMRN3ZV1r7HGQrTmjDsvYCSzd",
+      "timestamp": "2026-08-23T08:53:00Z",
+      "operation": {
+        "type": "recover",
+        "rotationKeys": ["z6MkigfyW3kW2qqgvra9yvBcaJukVTD6XdDyfkm52WfGycAm"],
+        "recoveryKeys": ["z6MkiF8boU9DC2L3tjshAv2macsTWno6fguvWaBwKyxNW7hE"],
+        "verificationMethods": [{
+          "id": "#auth-3",
+          "type": "Multikey",
+          "publicKeyMultibase": "z6MkigfyW3kW2qqgvra9yvBcaJukVTD6XdDyfkm52WfGycAm",
+          "purposes": ["authentication", "assertionMethod"]
+        }],
+        "services": [{
+          "id": "#resources",
+          "type": "SizuqResourceService",
+          "serviceEndpoint": "https://sizuq.org/api/reference/resource"
+        }]
+      },
+      "proof": {
+        "key": "z6MkhsyZ5xA9jqH8ibSsn2Ytvut8SdWjCoPfgiHVpaYJsWV3",
+        "signatureMultibase": "z29RKW9wKV6PTpF7YM9a3BUNZpPMJ1vEZz6URScVJGd7LeSjxWM5pYhFEftc1LDy8aRnZfvGNStvJB5JTuEVvkzFL"
+      }
+    },
+    {
+      "did": "did:sizuq:zGjN5sTV97W2YUKUmpmH7Ap4qbHBZKRW3ceub3zaKHz52",
+      "sequence": 3,
+      "previous": "zAvoSZqcJFfgxvTk4giHMYYQJ4LobvaAiY318E34dGi4o",
+      "timestamp": "2026-08-23T08:54:00Z",
+      "operation": {"type": "deactivate"},
+      "proof": {
+        "key": "z6MkiF8boU9DC2L3tjshAv2macsTWno6fguvWaBwKyxNW7hE",
+        "signatureMultibase": "z58e4vM55wwVT3uyC8ed1sVpoxa92kgjq127hbW8ixtWJAwoM68HBHhSpD1P9LdWys6o4GKStui7YJtqJdbV4Sj18"
+      }
+    }
+  ]
+}
