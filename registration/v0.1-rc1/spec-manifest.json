@@ -16,7 +16,8 @@
       "publicUrl": "https://sizuq.org/spec/sq-uri",
       "sourcePath": "specs/sq-uri/v0.1/README.md",
       "sourceBlobSha": "1ce71ff1fbd0bb0357af8c4dcad15ebbb3b488c2",
-      "requestedIanaStatus": "Provisional"
+      "requestedIanaStatus": "Provisional",
+      "ianaDraft": "registration/v0.1-rc1/iana-sq-provisional.md"
     },
     "SizuqResourceService": {
       "profile": "registration/v0.1-rc1/sizuq-resource-service.md",
@@ -56,6 +57,7 @@
       "GitHub Actions typecheck and repository-local conformance tests pass on the final release commit",
       "independent resolver is rerun against the final v0.1-rc1 artifacts",
       "durable sizuq.org specification/context/namespace URLs are verified against the frozen semantics, including @protected context output",
+      "an identifiable individual registrant is inserted in the RFC 7595 IANA Contact field and the correspondence address is confirmed monitored",
       "the live IANA URI Schemes registry is rechecked for sq immediately before submission",
       "the live W3C DID Methods collection and DID Extensions policies are rechecked immediately before submission",
       "an immutable protocol-v0.1-rc1 tag is created at the reviewed release commit"
