@@ -1,0 +1,48 @@
+{
+  "suite": "sizuq-protocol-live-evidence-v0.1",
+  "status": "informative",
+  "protocolVersion": "0.1",
+  "did": "did:sizuq:zBNK1XN8HAhM1buSETkPJRV6dAhR98q27wkunKaqMVoT5",
+  "root": "zBNK1XN8HAhM1buSETkPJRV6dAhR98q27wkunKaqMVoT5",
+  "creationDigest": "z3SNf1w48swHFvCnvZeMkfzmgdNxPJmPY2iQS6FoYW9mL",
+  "operations": "https://sizuq.org/.well-known/sizuq/did/zBNK1XN8HAhM1buSETkPJRV6dAhR98q27wkunKaqMVoT5/operations",
+  "resources": [
+    {
+      "uri": "sq:zBNK1XN8HAhM1buSETkPJRV6dAhR98q27wkunKaqMVoT5/profile",
+      "https": "https://sizuq.org/api/reference/resource/profile"
+    },
+    {
+      "uri": "sq:zBNK1XN8HAhM1buSETkPJRV6dAhR98q27wkunKaqMVoT5/post/hello-world",
+      "https": "https://sizuq.org/api/reference/resource/post/hello-world"
+    }
+  ],
+  "creationRecord": {
+    "did": "did:sizuq:zBNK1XN8HAhM1buSETkPJRV6dAhR98q27wkunKaqMVoT5",
+    "sequence": 0,
+    "genesis": {
+      "type": "create",
+      "version": 1,
+      "rotationKeys": ["z6MkhKiQui6ZFnp5DeV71xbpZcq7kfP4DhiETCENSemBE5Jr"],
+      "recoveryKeys": ["z6Mkn2uTWLL2uxbPN3UZFsRcuZ9BUPGuWRbRToiniTbBbv44"],
+      "verificationMethods": [
+        {
+          "id": "#auth-1",
+          "type": "Multikey",
+          "publicKeyMultibase": "z6MkhKiQui6ZFnp5DeV71xbpZcq7kfP4DhiETCENSemBE5Jr",
+          "purposes": ["authentication", "assertionMethod"]
+        }
+      ],
+      "services": [
+        {
+          "id": "#resources",
+          "type": "SizuqResourceService",
+          "serviceEndpoint": "https://sizuq.org/api/reference/resource"
+        }
+      ]
+    },
+    "proof": {
+      "key": "z6MkhKiQui6ZFnp5DeV71xbpZcq7kfP4DhiETCENSemBE5Jr",
+      "signatureMultibase": "z2N4Nxn5iFWojKXKroEREtT9iwpkmxqAgegKgPz2n51oHdLp9EsGAFsCgPrYzwikrmHqbFc4HmtwcjxNd2uqs1QKP"
+    }
+  }
+}
