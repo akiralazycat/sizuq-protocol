@@ -1,0 +1,31 @@
+{
+  "suite": "sizuq-protocol-did-v0.1",
+  "status": "normative",
+  "protocolVersion": "0.1",
+  "methodSpecificId": "z75o3YCSEJnivnVp76pexncihFSzBTaRJ7jdCtaXURwtM",
+  "did": "did:sizuq:z75o3YCSEJnivnVp76pexncihFSzBTaRJ7jdCtaXURwtM",
+  "creationDigest": "zG7ckLYBhXPL78MASw4hpG2usWsd9bjo7ixp8DvnCZgK1",
+  "creationRecord": {
+    "did": "did:sizuq:z75o3YCSEJnivnVp76pexncihFSzBTaRJ7jdCtaXURwtM",
+    "sequence": 0,
+    "genesis": {
+      "type": "create",
+      "version": 1,
+      "rotationKeys": ["z6MkehRgf7yJbgaGfYsdoAsKdBPE3dj2CYhowQdcjqSJgvVd"],
+      "recoveryKeys": ["z6MkhFwXNFWosLeugvSf4wcL9t3uuRXueGSFTRgSvHhWj5G2"],
+      "verificationMethods": [
+        {
+          "id": "#auth-1",
+          "type": "Multikey",
+          "publicKeyMultibase": "z6MkehRgf7yJbgaGfYsdoAsKdBPE3dj2CYhowQdcjqSJgvVd",
+          "purposes": ["authentication", "assertionMethod"]
+        }
+      ],
+      "services": []
+    },
+    "proof": {
+      "key": "z6MkehRgf7yJbgaGfYsdoAsKdBPE3dj2CYhowQdcjqSJgvVd",
+      "signatureMultibase": "z5WveVFfwMik3o6V19rxoKNVbSokiXQiQVr55aKGmpm1RuakwFy4gTAEGaRaY2Y2GCh9hRVJf45mCqjG9CSsBGMUg"
+    }
+  }
+}
