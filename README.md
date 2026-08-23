@@ -4,7 +4,9 @@ Canonical source repository for the Sizuq Protocol specifications, registration 
 
 ## Status
 
-**Editor's Draft / v0.1 release-candidate work.**
+**Editor's Draft / v0.1-rc1 verification phase.**
+
+The specification, core implementation, separately written resolver, conformance vectors, namespace/context material, registration bundle, and portable reference-node persistence contract are now represented in this repository.
 
 Neither `did:sizuq` nor `sq:` is claimed to be externally registered until the relevant registry accepts the submission.
 
@@ -12,7 +14,7 @@ Neither `did:sizuq` nor `sq:` is claimed to be externally registered until the r
 - `sq:` — companion resource URI scheme
 - `SizuqResourceService` — DID service profile used to dereference `sq:` resources
 
-The deployed documentation and interoperability environment remains available at `https://sizuq.org` while source-of-truth material is migrated into this repository.
+The deployed documentation and interoperability environment remains available at `https://sizuq.org`. This repository is the source of truth for protocol release work; the deployed site remains the durable publication and live interoperability surface.
 
 ## Design boundary
 
@@ -62,23 +64,47 @@ The v0.1 line fixes the following interoperability choices:
 
 Backward-incompatible changes require a new protocol version.
 
+## Verification
+
+The repository contains standalone TypeScript verification tooling:
+
+```bash
+npm install
+npm run typecheck
+npm test
+```
+
+`npm test` verifies the migrated core against repository-local DID, lifecycle, and `sq:` conformance vectors as well as the public interoperability fixture.
+
+The separately written resolver can also be rerun against the live `sizuq.org` evidence:
+
+```bash
+npm run test:independent:live
+```
+
+The live test is interoperability evidence, not a prerequisite for local parsing/cryptographic correctness and not a security certification.
+
 ## Registration track
 
-The intended order is:
+The release sequence is:
 
-1. freeze the `v0.1-rc1` repository state;
-2. close DID Core security/privacy requirements;
-3. publish stable namespace/context resources;
-4. request IANA **Provisional** registration for `sq:`;
-5. submit `did:sizuq` to the W3C DID Methods collection.
+1. run repository-local typecheck and conformance tests on the final release commit;
+2. rerun the separately written resolver against the final v0.1-rc1 artifacts;
+3. verify the durable `sizuq.org` specification/context/namespace publication;
+4. freeze an immutable `protocol-v0.1-rc1` release tag;
+5. recheck external registries immediately before submission;
+6. request IANA **Provisional** registration for `sq:`;
+7. submit `did:sizuq` to the W3C DID Methods collection.
+
+Detailed gates are recorded in `registration/v0.1-rc1/spec-manifest.json`.
 
 Registration readiness is a technical state, not a marketing label. The repository MUST NOT describe either identifier as registered before acceptance by the corresponding external registry.
 
-## Existing implementation evidence
+## Implementation evidence
 
-The earlier implementation currently lives under `akiralazycat/sizuq/protocol` and already provides a dependency-free core, public vectors, a separately written resolver, a persistent reference directory, and reproducible resolve/verify/dereference evidence. Those artifacts are being promoted into this repository rather than re-invented.
+`packages/core/` contains the promoted dependency-free reference implementation. `implementations/independent-resolver/` contains a separately written resolver that deliberately imports no core implementation code. `conformance/` includes the normative creation vector, `sq:` syntax cases, public immutable evidence, a full create → rotate → recover → deactivate lifecycle, and the historical independent-resolver report.
 
-Until migration is complete, the deployed `sizuq.org` artifacts remain useful interoperability evidence, but this repository is the intended long-term source of truth for protocol releases.
+The separately written resolver is implementation-independent within the Sizuq project; it is not described as an unaffiliated third-party implementation.
 
 ## Normative language
 
