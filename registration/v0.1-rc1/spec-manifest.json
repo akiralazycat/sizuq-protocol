@@ -1,0 +1,39 @@
+{
+  "release": "v0.1-rc1",
+  "status": "release-candidate",
+  "normativeLanguage": "en",
+  "repository": "akiralazycat/sizuq-protocol",
+  "specifications": {
+    "did:sizuq": {
+      "publicUrl": "https://sizuq.org/spec/did-sizuq",
+      "sourcePath": "specs/did-sizuq/v0.1/README.md",
+      "sourceBlobSha": "4d77cc3c8d37bb3ef0ef3abe9c036d25267fed6a",
+      "securityPrivacySupplement": "registration/v0.1-rc1/did-sizuq-security-privacy.md",
+      "securityPrivacyMatrix": "registration/v0.1-rc1/did-core-security-privacy-matrix.md"
+    },
+    "sq:": {
+      "publicUrl": "https://sizuq.org/spec/sq-uri",
+      "sourcePath": "specs/sq-uri/v0.1/README.md",
+      "sourceBlobSha": "1ce71ff1fbd0bb0357af8c4dcad15ebbb3b488c2",
+      "requestedIanaStatus": "Provisional"
+    },
+    "SizuqResourceService": {
+      "profile": "registration/v0.1-rc1/sizuq-resource-service.md",
+      "termIri": "https://sizuq.org/ns/v0.1#SizuqResourceService",
+      "contextSource": "contexts/sizuq/v0.1.jsonld",
+      "contextUrl": "https://sizuq.org/contexts/sizuq/v0.1"
+    }
+  },
+  "frozenAlgorithms": {
+    "canonicalization": "RFC 8785 JCS",
+    "digest": "SHA-256",
+    "digestEncoding": "multibase base58btc",
+    "signatureSuite": "Ed25519 Multikey"
+  },
+  "freeze": {
+    "tag": "protocol-v0.1-rc1",
+    "tagCreated": false,
+    "blockingUntilTag": true,
+    "rule": "Before external submission, freeze this release at an immutable commit/tag and re-check the manifest blob identities. Interoperable behavior changes require a later release candidate."
+  }
+}
