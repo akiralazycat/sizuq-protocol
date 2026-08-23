@@ -9,6 +9,8 @@ As of 2026-08-23, the current W3C DID Methods document does not contain a `sizuq
 
 The current W3C process requires a modification request to the DID Extensions repository and requires DID method specifications to meet DID Core method requirements. The external registry/listing is discovery metadata, not W3C endorsement of the method.
 
+Current DID Extensions policy also requires additions to have a human-readable description, a defining specification URL, and no unreasonable legal/security/privacy harm. JSON-LD context additions must be versioned, persistent, not date-stamped, and use `@protected`.
+
 ## Proposed entry data
 
 | Field | Value |
@@ -74,11 +76,13 @@ The separately written resolver is implementation-independent inside the same pr
 
 - [ ] Recheck that `sizuq` is not already present in the current DID Methods document.
 - [ ] Freeze an immutable release tag/commit and update the manifest.
-- [ ] Complete core/reference/independent-resolver migration into this repository.
-- [ ] Run all frozen conformance vectors against both implementations.
+- [x] Promote the core and separately written resolver source into this repository.
+- [ ] Run all frozen conformance vectors against both implementations on the final release commit.
 - [ ] Verify DID Document JSON-LD output includes the stable Sizuq v0.1 context when `SizuqResourceService` is used.
+- [x] Ensure the repository context is versioned, not date-stamped, and contains `"@protected": true`.
+- [ ] Verify the deployed `https://sizuq.org/contexts/sizuq/v0.1` serves the same protected context.
 - [ ] Confirm every security/privacy matrix row remains closed.
-- [ ] Confirm stable rendered specification and namespace URLs resolve.
+- [ ] Confirm stable rendered specification, context, and namespace URLs resolve.
 - [ ] Confirm monitored contact information.
 - [ ] Inspect the current upstream repository and use its exact current entry format.
 - [ ] Open the upstream PR with conservative wording: experimental/known method, not endorsement.
