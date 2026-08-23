@@ -49,17 +49,20 @@ When a `did:sizuq` DID Document is serialized as JSON-LD and contains `SizuqReso
 }
 ```
 
-The compact term maps to:
+The compact term maps to the protected, versioned context:
 
 ```json
 {
   "@context": {
+    "@protected": true,
     "SizuqResourceService": "https://sizuq.org/ns/v0.1#SizuqResourceService"
   }
 }
 ```
 
-The namespace is versioned. Incompatible future semantics require a new namespace version.
+The context uses `@protected` so later contexts cannot silently redefine the v0.1 term. This also satisfies the current W3C DID Extensions registration policy for JSON-LD Context additions.
+
+The namespace is versioned and is not date-stamped. Incompatible future semantics require a new namespace version.
 
 ## 4. `sq:` dereferencing
 
