@@ -3,6 +3,7 @@
   "status": "release-candidate",
   "normativeLanguage": "en",
   "repository": "akiralazycat/sizuq-protocol",
+  "registryPreflight": "registration/v0.1-rc1/registry-preflight-2026-08-23.md",
   "specifications": {
     "did:sizuq": {
       "publicUrl": "https://sizuq.org/spec/did-sizuq",
@@ -21,6 +22,8 @@
       "profile": "registration/v0.1-rc1/sizuq-resource-service.md",
       "termIri": "https://sizuq.org/ns/v0.1#SizuqResourceService",
       "contextSource": "contexts/sizuq/v0.1.jsonld",
+      "contextSourceBlobSha": "6c9fcd6030378bd4de0db99cb5d78cca8788807b",
+      "contextProtected": true,
       "contextUrl": "https://sizuq.org/contexts/sizuq/v0.1"
     }
   },
@@ -52,9 +55,9 @@
     "remainingBlockingChecks": [
       "GitHub Actions typecheck and repository-local conformance tests pass on the final release commit",
       "independent resolver is rerun against the final v0.1-rc1 artifacts",
-      "durable sizuq.org specification/context/namespace URLs are verified against the frozen semantics",
+      "durable sizuq.org specification/context/namespace URLs are verified against the frozen semantics, including @protected context output",
       "the live IANA URI Schemes registry is rechecked for sq immediately before submission",
-      "the live W3C DID Methods collection is rechecked for sizuq immediately before submission",
+      "the live W3C DID Methods collection and DID Extensions policies are rechecked immediately before submission",
       "an immutable protocol-v0.1-rc1 tag is created at the reviewed release commit"
     ],
     "rule": "Before external submission, freeze this release at an immutable commit/tag and re-check the manifest blob identities. Interoperable behavior changes require a later release candidate."
