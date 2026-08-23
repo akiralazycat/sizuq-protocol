@@ -1,11 +1,17 @@
 # Independent Resolver
 
-This directory is reserved for a separately written Sizuq Protocol v0.1 resolver used as implementation-independence evidence.
+This directory contains a separately written Sizuq Protocol v0.1 resolver used as implementation-independence evidence.
 
-## Migration status
+## Status
 
-**BLOCKING for release freeze:** the current dependency-free ES module remains in `akiralazycat/sizuq/protocol/public/implementations/sizuq-independent-resolver-v0.1.mjs` and must be promoted here together with its conformance runner/report.
+**Source and conformance-runner migration complete.**
 
-The resolver MUST NOT import `@sizuq/protocol` or share protocol implementation code with `packages/core`.
+- `sizuq-independent-resolver-v0.1.mjs` — dependency-free resolver/CLI;
+- `run-sizuq-conformance-v0.1.mjs` — live interoperability runner;
+- `../../conformance/independent-resolver-report-v0.1.json` — previously generated public conformance report.
 
-Passing the same normative vectors demonstrates implementation independence inside the Sizuq project. It MUST NOT be described as an unaffiliated third-party implementation unless an unaffiliated maintainer independently implements and operates a conforming resolver.
+The resolver intentionally does not import `@sizuq/protocol` or share protocol implementation code with `packages/core`.
+
+Passing the same frozen vectors demonstrates implementation independence inside the Sizuq project. It MUST NOT be described as an unaffiliated third-party implementation unless an unaffiliated maintainer independently implements and operates a conforming resolver.
+
+Before `v0.1-rc1` is frozen, the runner SHOULD be executed again from this repository and the report regenerated against the exact release candidate.
