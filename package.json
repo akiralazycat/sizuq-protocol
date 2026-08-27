@@ -6,7 +6,9 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test packages/core/src/*.test.ts",
-    "test:independent:live": "node implementations/independent-resolver/run-sizuq-conformance-v0.1.mjs"
+    "test:independent:live": "node implementations/independent-resolver/run-sizuq-conformance-v0.1.mjs",
+    "verify:local": "npm run typecheck && npm test",
+    "verify:release": "npm run verify:local && npm run test:independent:live"
   },
   "devDependencies": {
     "@types/node": "^22",

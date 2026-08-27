@@ -46,6 +46,7 @@
       "conformance/live-evidence-v0.1.json"
     ],
     "historicalIndependentReport": "conformance/independent-resolver-report-v0.1.json",
+    "verificationProcedure": "registration/v0.1-rc1/local-verification.md",
     "sourceMigrationComplete": true,
     "releaseCandidateRetestRequired": true
   },
@@ -54,7 +55,7 @@
     "tagCreated": false,
     "blockingUntilTag": true,
     "remainingBlockingChecks": [
-      "GitHub Actions typecheck and repository-local conformance tests pass on the final release commit",
+      "authoritative local typecheck and repository-local conformance tests pass on the exact final release commit and the result is recorded",
       "independent resolver is rerun against the final v0.1-rc1 artifacts",
       "durable sizuq.org specification/context/namespace URLs are verified against the frozen semantics, including @protected context output",
       "an identifiable individual registrant is inserted in the RFC 7595 IANA Contact field and the correspondence address is confirmed monitored",

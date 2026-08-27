@@ -8,7 +8,7 @@ This directory freezes the registration-facing contract for Sizuq Protocol v0.1 
 
 ## Registration order
 
-1. run the final repository-local conformance suite;
+1. run the authoritative repository-local release gate against the exact candidate commit;
 2. rerun the separately written resolver against release-candidate evidence;
 3. verify durable `sizuq.org` specification/context/namespace output;
 4. freeze an immutable `protocol-v0.1-rc1` tag;
@@ -17,6 +17,8 @@ This directory freezes the registration-facing contract for Sizuq Protocol v0.1 
 7. submit `did:sizuq` to the W3C DID Methods collection.
 
 No registry application should be sent while an item marked **BLOCKING** in the manifest remains open.
+
+GitHub Actions is supplementary automation, not a release prerequisite. If Actions is unavailable, the exact release commit is validated with the local procedure in `local-verification.md` and its evidence is recorded before the tag is frozen.
 
 ## Frozen v0.1 contract
 
@@ -44,6 +46,7 @@ A backward-incompatible change requires a new protocol version.
 ## Release files
 
 - `spec-manifest.json` — source paths/blob identities, algorithm choices, evidence, and remaining blocking checks;
+- `local-verification.md` — authoritative Actions-independent release verification procedure;
 - `registry-preflight-2026-08-23.md` — dated external-registry snapshot, never a substitute for submission-day verification;
 - `iana-sq-provisional.md` — IANA Provisional registration draft;
 - `w3c-did-method-submission.md` — W3C DID Methods submission draft/checklist;
@@ -64,6 +67,18 @@ Implementation evidence:
 - `../../implementations/independent-resolver/`;
 - `../../conformance/`;
 - `../../reference-node/`.
+
+## Authoritative verification gate
+
+From a clean checkout of the exact candidate commit, use Node.js 22 and run:
+
+```sh
+npm install --ignore-scripts
+npm run verify:local
+npm run test:independent:live
+```
+
+Equivalently, after dependencies are installed, `npm run verify:release` runs both verification stages. Record the full commit SHA, runtime versions, UTC timestamp, local result, and independent resolver result. A GitHub Actions result may supplement this evidence but is not required.
 
 ## Freeze policy
 

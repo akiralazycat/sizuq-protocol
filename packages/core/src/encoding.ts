@@ -56,7 +56,7 @@ export function base58btcDecode(value: string): Uint8Array {
       carry = current >> 8;
     }
     while (carry > 0) {
-      bytes.push(carry & 0xff;
+      bytes.push(carry & 0xff);
       carry >>= 8;
     }
   }
