@@ -66,23 +66,24 @@ Backward-incompatible changes require a new protocol version.
 
 ## Verification
 
-The repository contains standalone TypeScript verification tooling:
+Use Node.js 22 and run the local checks from the repository root.
 
 ```bash
-npm install
-npm run typecheck
-npm test
+npm install --ignore-scripts --no-package-lock
+npm run verify:local
 ```
 
-`npm test` verifies the migrated core against repository-local DID, lifecycle, and `sq:` conformance vectors as well as the public interoperability fixture.
+`verify:local` runs typecheck and `npm test`. The test suite uses repository-local DID, lifecycle, `sq:`, and public interoperability fixtures. To investigate a failure, rerun `npm run typecheck` or `npm test` and look up the failed test by name in [the core sources](packages/core/src/).
 
-The separately written resolver can also be rerun against the live `sizuq.org` evidence:
+The [Protocol conformance workflow](.github/workflows/conformance.yml) runs these checks on pushes to `main`. See [Actions](https://github.com/akiralazycat/sizuq-protocol/actions/workflows/conformance.yml) for the result on the relevant commit.
+
+For release verification, the separately written resolver reads the published `sizuq.org` evidence.
 
 ```bash
 npm run test:independent:live
 ```
 
-The live test is interoperability evidence, not a prerequisite for local parsing/cryptographic correctness and not a security certification.
+`npm run verify:release` runs the local checks followed by the live resolver. Record the commit and the published evidence used to verify interoperability for that release. See [AGENTS.md](AGENTS.md) for the contribution workflow.
 
 ## Registration track
 
